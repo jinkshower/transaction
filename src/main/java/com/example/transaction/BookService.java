@@ -20,4 +20,9 @@ public class BookService {
 
         return bookRepository.save(book);
     }
+
+    public Book get(Long id) {
+        return bookRepository.findById(id)
+            .orElseThrow(IllegalArgumentException::new);
+    }
 }
